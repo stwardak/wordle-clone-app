@@ -18,6 +18,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_18_182813) do
     t.integer "word_id"
     t.string "status"
     t.integer "attempts"
+
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,6 +33,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_18_182813) do
     t.integer "game_id"
     t.integer "word_id"
     t.string "result"
+  end 
+
+  create_table "words", force: :cascade do |t|
+    t.string "word"
+    t.string "difficulty_level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
