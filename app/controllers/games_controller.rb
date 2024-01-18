@@ -1,15 +1,17 @@
 class GamesController < ApplicationController
-  def index 
-    @games = Game.all
-    render :index
+  def create 
+    @game = Game.new (
+      word_id: params[:word_id],
+      status: params[:status],
+      attempts: params[:attempts]
+    )
+    @game.save
   end
 
   def show
-    
+
   end
 
-  def create 
-  end
 
   def update
   end
